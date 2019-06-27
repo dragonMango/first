@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<script>
+    function set() {
+        var postData = {
+            userName : $("#userName").val(),
+            password : $("#password").val(),
+            phone : $("#phone").val()
+        }
+        $.ajax({
+            url : "/user/add",
+            dataType : "json",
+            async : false,
+            type : "post",
+            data : postData,
+            success: function(result){
+                alert("i'm here")
+                console.log(data);
+            }
+        })
+    }
+
+</script>
+<body>
+    <input id="userName">
+    <input id="password">
+    <input id="phone">
+    <button id="admin" onclick="set()">admin</button>
+</body>
+</html>
